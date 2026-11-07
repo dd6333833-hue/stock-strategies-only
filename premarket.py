@@ -17,7 +17,6 @@ except ImportError:
     pass
 
 from stock_strategies.night_session import get_night_session
-from stock_strategies.sheet import read_latest_signals
 from stock_strategies.notify import send_telegram, format_premarket
 
 
@@ -25,8 +24,6 @@ REQUIRED_ENV = [
     "FINMIND_TOKEN",
     "TELEGRAM_BOT_TOKEN",
     "TELEGRAM_CHAT_ID",
-    "GOOGLE_SHEET_ID",
-    "GOOGLE_CREDS_JSON",
 ]
 
 
@@ -49,7 +46,7 @@ def main():
     #    format_premarket 會自動挑「最近一批有 BUY/WATCH」的日期。
     print("讀取昨日訊號...")
     try:
-        signals = read_latest_signals(limit=300)
+        signals = ［］
     except Exception as e:
         print(f"⚠️ 讀取訊號失敗: {e}", file=sys.stderr)
         signals = []
