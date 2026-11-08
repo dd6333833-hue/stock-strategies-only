@@ -46,7 +46,7 @@ def main():
     #    format_premarket 會自動挑「最近一批有 BUY/WATCH」的日期。
     print("讀取昨日訊號...")
     try:
-        signals = ［］
+        signals = []
     except Exception as e:
         print(f"⚠️ 讀取訊號失敗: {e}", file=sys.stderr)
         signals = []
